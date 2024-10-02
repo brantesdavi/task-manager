@@ -1,0 +1,37 @@
+<div class="" [ngClass]="{ 'w-64': isExpanded, 'w-16': !isExpanded }" 
+     class="bg-white h-screen transition-all duration-300">
+  <div class="p-4 text-white flex justify-between items-center">
+    <span *ngIf="isExpanded">Menu</span>
+    <button (click)="toggleSidebar()">
+      <fa-icon [icon]="['fas', 'bars']" 
+        class="text-black text-xl"/>
+    </button>
+  </div>
+  <ul class="space-y-4 p-4">
+    <li>
+      <a href="#" 
+        [ngClass]="{ 'justify-between': isExpanded, 'justify-center': !isExpanded }" 
+        class="flex items-center font-semibold text-black text-sm bg-gray-100 px-4 py-2 rounded-lg transition-all duration-300">
+        <span class="transition-all duration-300" *ngIf="isExpanded">Dashboard</span>
+        <fa-icon [icon]="['fas', 'gauge-high']" class="text-black text-xl transition-all duration-300"></fa-icon>
+      </a>
+    </li>
+    <li>
+      <a href="#" 
+        [ngClass]="{ 'justify-between': isExpanded, 'justify-center': !isExpanded }" 
+        class="flex items-center font-semibold text-gray-400 text-sm px-4 py-2 rounded-lg transition-all duration-300">
+        <span class="transition-all duration-300" *ngIf="isExpanded">Projects</span>
+        <fa-icon [icon]="['fas', 'folder']" class="text-gray-400 text-xl transition-all duration-300"></fa-icon>
+      </a>
+    </li>
+    <li>
+      <a href="/users" 
+        [ngClass]="{ 'justify-between': isExpanded, 'justify-center': !isExpanded }" 
+        class="flex items-center font-semibold text-gray-400 text-sm px-4 py-2 rounded-lg transition-all duration-300">
+        <span class="transition-all duration-300" *ngIf="isExpanded">Users</span>
+        <fa-icon [icon]="['fas', 'users']" class="text-gray-400 text-xl transition-all duration-300"></fa-icon>
+      </a>
+    </li>
+  </ul>
+  
+</div>
